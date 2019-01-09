@@ -13,6 +13,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 public class Main implements MouseListener, KeyListener {
@@ -22,6 +24,7 @@ public class Main implements MouseListener, KeyListener {
 	JFrame window = new JFrame();
 	DrawingPanel drPanel;
 	long t1 = System.currentTimeMillis();
+	ArrayList<Room> roomList = new ArrayList<Room>();
 
 	public static void main(String[] args) {
 		new Main();
@@ -34,7 +37,10 @@ public class Main implements MouseListener, KeyListener {
 			public void actionPerformed(ActionEvent e) {
 				long t2 = System.currentTimeMillis();
 				t1=t2;
-				printtext();
+				printroom1();
+				printroom2();
+				printroom3();
+				printroom4();
 				drPanel.repaint();
 			}
 		});
@@ -43,6 +49,9 @@ public class Main implements MouseListener, KeyListener {
 
 	//***************Setting up the window****************\\
 	void setup() {
+		Room.createAllRooms(roomList);
+		
+		
 		window = new JFrame("GAMENAME");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -57,11 +66,20 @@ public class Main implements MouseListener, KeyListener {
 		drPanel.repaint();
 	}
 	
-	//**************Printing the story text**************\\
-	void printtext() {
+	//**************Printing the story text**************\\	
+	void printroom1() {
 		
 	}
-	
+	void printroom2() {
+		
+	}
+	void printroom3() {
+		
+	}
+	void printroom4() {
+		
+	}
+
 	//*********Drawing the window and components*********\\
 	private class DrawingPanel extends JPanel {
 		DrawingPanel() {

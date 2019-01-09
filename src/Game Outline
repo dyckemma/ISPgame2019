@@ -1,4 +1,20 @@
 Objective: Escape Chateau D'If
 
-You start out as a prisioner of Chateau D'If in the year 1800
+Player starts out as a prisioner of Chateau D'If in the year 1800.
+Player must use surroundings to escape the island in ten days.
 
+ROOM 1:
+	* Prison cell
+	* objects in room: bed, barred window, dirt, meal
+	* Use spoon to dig to cell next door -- takes 20 digs
+	* do not dig when the guard comes by every 15 seconds
+ROOM 2:
+	* Prison cell 2
+	* talk to other prisoner 
+	* other prisoner will provide a map of the prison but will not help you escape
+	* Player must exchange meal for the map
+ROOM 3:
+	* Tunnel through the prison in the directions indicated on the map
+	* will lead to outside
+ROOM 4:
+	* find boat and escape the island
