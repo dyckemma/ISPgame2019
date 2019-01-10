@@ -1,12 +1,13 @@
 /* Emma Dyck 
  * Mr. Harwood ICS4U ISP
  * Created January 8, 2019 
- * Last Edited January 8, 2019
+ * Last Edited January 10, 2019
  * A cool, graphic text-based adventure game
  */
 package coolGame;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -15,7 +16,10 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
 
 public class Main implements MouseListener, KeyListener {
 
@@ -51,7 +55,6 @@ public class Main implements MouseListener, KeyListener {
 	void setup() {
 		Room.createAllRooms(roomList);
 		
-		
 		window = new JFrame("GAMENAME");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -68,7 +71,7 @@ public class Main implements MouseListener, KeyListener {
 	
 	//**************Printing the story text**************\\	
 	void printroom1() {
-		
+	
 	}
 	void printroom2() {
 		
