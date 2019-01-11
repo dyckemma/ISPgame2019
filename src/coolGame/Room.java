@@ -10,7 +10,7 @@ public class Room {
 
 	String name;
 	String description;
-	int currentroom = 0;
+	static int currentroom = 0;
 	ArrayList<Item> itemlist = new ArrayList<Item>();
 
 	static void createAllRooms (ArrayList<Room> roomList) {
@@ -26,12 +26,12 @@ public class Room {
 
 		r = new Room();
 		r.name = "front of prison";
-		r.description = "";
+		r.description = "You are in front of the prison.";
 		roomList.add(r);
 
 		r = new Room();
 		r.name = "back of prison";
-		r.description = "";
+		r.description = "You are behind the prison.";
 		roomList.add(r);
 	}
 	
