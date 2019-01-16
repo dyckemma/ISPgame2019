@@ -6,8 +6,11 @@
  */
 package coolGame;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -64,12 +67,12 @@ public class Main implements MouseListener, KeyListener {
 		window = new JFrame("GAMENAME");
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		text = new JLabel();
-		command = new JTextField("          ");
+		text = new JLabel("Press Enter to Start");
+		command = new JTextField("                                                                                                              ");
 		drPanel = new DrawingPanel();
 		drPanel.addKeyListener(this);
 		drPanel.addMouseListener(this);
-		window.add(drPanel);
+		window.add(drPanel, BorderLayout.CENTER);
 		drPanel.add(text);
 		drPanel.add(command);
 
@@ -99,20 +102,28 @@ public class Main implements MouseListener, KeyListener {
 //		}
 //		return image;
 //	}
+	
+	void initGraphics() {
+		panH = window.getSize().height;
+		panW = window.getSize().width;
+	}
 
 	//*********Drawing the window and components*********\\
 	private class DrawingPanel extends JPanel {
 		DrawingPanel() {
-			this.setBackground(Color.WHITE);	
+			this.setBackground(Color.WHITE);
 		}
 		@Override
 		public void paintComponent(Graphics g) {
-			panH = this.getHeight();
-			panW = this.getWidth();
-			panH = this.getHeight();
-
 			super.paintComponent(g); //clear screen and repaint using background color
+			initGraphics();
 //			g.drawImage(backImg, 0, 0, panW, panH, drPanel);	//background image
+			g.drawRect(6,3,panW, panH);
+			g.fillRect(panH, panW, WIDTH, HEIGHT);
+			Graphics2D g2 = (Graphics2D) g;
+			g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+			g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+			drPanel.repaint();
 
 		}
 	}
